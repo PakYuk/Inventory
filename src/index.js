@@ -7,12 +7,27 @@ const PRODUCTS = [
 	{
 		item: 'cold cup',
 		size: 'medium',
-		count: 100,
+		quantity: 100,
 		lastPurchaseDate: '2022/02/21',
 	},
-	{item: 'cold cup', size: 'large', count: 80, lastPurchaseDate: '2021/02/21'},
-	{item: 'hot cup', size: 'medium', count: 50, lastPurchaseDate: '2021/12/11'},
-	{item: 'hot cup', size: 'large', count: 30, lastPurchaseDate: '2021/09/03'},
+	{
+		item: 'cold cup',
+		size: 'large',
+		quantity: 80,
+		lastPurchaseDate: '2021/02/21',
+	},
+	{
+		item: 'hot cup',
+		size: 'medium',
+		quantity: 50,
+		lastPurchaseDate: '2021/12/11',
+	},
+	{
+		item: 'hot cup',
+		size: 'large',
+		quantity: 30,
+		lastPurchaseDate: '2021/09/03',
+	},
 ];
 ReactDOM.render(
 	// <React.StrictMode>

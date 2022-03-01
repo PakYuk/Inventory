@@ -5,7 +5,7 @@ import Products from './components/Products';
 const title = 'LWTH Inventory Management';
 
 function App({products}) {
-	let [sortBy, setSortBy] = useState('upvotes');
+	let [sortBy, setSortBy] = useState('quantity');
 
 	function sortFunc(a, b) {
 		if (a[sortBy] < b[sortBy]) return -1;
@@ -15,8 +15,8 @@ function App({products}) {
 
 	let [data, setProduct] = useState(products.sort(sortFunc));
 
-	function sortByCount() {
-		setSortBy('count');
+	function sortByQuantity() {
+		setSortBy('quantity');
 		setProduct(data.sort(sortFunc));
 	}
 
@@ -33,7 +33,7 @@ function App({products}) {
 				<button
 					data-testid="least-in-stock-link"
 					className="small"
-					onClick={sortByCount}
+					onClick={sortByQuantity}
 				>
 					Least in Stock
 				</button>

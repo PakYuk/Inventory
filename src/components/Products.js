@@ -1,6 +1,38 @@
-import React from 'react';
+import React, {useState} from 'react';
 
 function Products({products}) {
+	console.log({products});
+	const [items, setItems] = useState([
+		{
+			itemName: 'cold cup',
+			size: 'medium',
+			quantity: 100,
+			lastPurchaseDate: '2022/02/21',
+		},
+		{
+			itemName: 'cold cup',
+			size: 'large',
+			quantityt: 80,
+			lastPurchaseDate: '2021/02/21',
+		},
+		{
+			itemName: 'hot cup',
+			size: 'medium',
+			quantity: 50,
+			lastPurchaseDate: '2021/12/11',
+		},
+		{
+			itemName: 'hot cup',
+			size: 'large',
+			quantity: 30,
+			lastPurchaseDate: '2021/09/03',
+		},
+	]);
+
+	const handleQuantityIncrease = (item) => {
+		item.quantity++;
+	};
+
 	return (
 		<div className="card w-50 mx-auto">
 			<table>
@@ -9,7 +41,7 @@ function Products({products}) {
 						<th>Last Purchase Date</th>
 						<th>Item Name</th>
 						<th>Size</th>
-						<th>Count</th>
+						<th>Quantity</th>
 					</tr>
 				</thead>
 				<tbody>
@@ -20,9 +52,14 @@ function Products({products}) {
 							</td>
 							<td data-testid="product-name">{item.item}</td>
 							<td data-testid="product-size">{item.size}</td>
-							<td data-testid="product-count">{item.count}</td>
-							<button> + </button>
-							<button> - </button>
+							<td data-testid="product-quantityt">{item.quantity}</td>
+							<button
+								onClick={(item) => {
+									handleQuantityIncrease(item);
+								}}
+							>
+								+
+							</button>
 						</tr>
 					))}
 				</tbody>
